@@ -1,13 +1,13 @@
 import click
-from . import controller
+from .fileController import controller
 
 @click.command()
 @click.option('--hash',
-                type=click.Choice(['AA','CC']),  prompt=True)
+                type=click.Choice(['SP','TB']),  prompt=True)
 
 
 def cli(hash):
-    click.echo(f"hello {hash}")
+    click.echo(controller.call(hash))
 
 
     
