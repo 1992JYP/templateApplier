@@ -1,5 +1,6 @@
 import click
-from .fileController import controller
+from fileController.function import fileRead
+from fileController.function import fileChange
 
 @click.command()
 @click.option('--hash',
@@ -7,7 +8,7 @@ from .fileController import controller
 
 
 def cli(hash):
-    click.echo(controller.call(hash))
+    click.echo(fileChange.change(hash))
 
 
     

@@ -17,7 +17,9 @@ def call(hash):
     template=open(templatePath,'r',encoding='utf-16')
     sqlText = template.read()
 
+    template.close()
     return sqlText
 
 if __name__ =="__main__":
     call()
+
