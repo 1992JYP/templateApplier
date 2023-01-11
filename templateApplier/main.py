@@ -1,5 +1,5 @@
 import click
-from fileController import controller
+from . import controller
 
 @click.command()
 @click.option('--hash',
