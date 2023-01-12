@@ -1,5 +1,9 @@
 import click
 
+@click.command()
+def main():
+    pass
+
 class sqlCreator:
     templateDict: dict
     path: str
