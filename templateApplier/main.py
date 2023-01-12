@@ -1,16 +1,34 @@
 import click
-from fileController.function import fileRead
-from fileController.function import fileChange
+from templateApplier.fileController.function.sql.sqlCreator import sqlCreator 
+from templateApplier.fileController.function.cs.csCreator import csCreator 
 
-@click.command()
-@click.option('--hash',
-                type=click.Choice(['SP','TB']),  prompt=True)
+from templateApplier.fileController.function.sql.sqlSelector import main as selector
 
+tpDict = {
+    'SQL':"sqlCreator()",
+    'CS' :"csCreator()"
+}
 
-def cli(hash):
-    click.echo(fileChange.change(hash))
+@click.group()
+def main():
+    pass
 
+@main.command("start")
+@click.option('--menu',
+                type=click.Choice(['SQL','CS'], case_sensitive=False),
+                prompt=True)
+def start(menu:str):
+    menu = menu.upper()
+    creator = eval(tpDict[menu])
+    click.echo(creator.readTemplate())
 
+@main.command("sql")
+# @click.argument
+def sql():
+    sqlcreator = sqlCreator()
+    click.echo(sqlcreator.change())
+
+main.add_command(selector,'start')
     
 if __name__ =="__main__":
-    cli()
+    main()

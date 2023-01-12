@@ -5,8 +5,6 @@ setup(
     version='0.0.1',
     author="jyp",
     author_email="bit6449@naver.com",
-    description="Simple Calculation by Python",
-    long_description='README.md',
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
@@ -14,7 +12,7 @@ setup(
     ],
     entry_points={
         'console_scripts':[
-            'clickscript = templateApplier.main:cli'
+            'clickscript = templateApplier.main:main'
         ]
     }
     
