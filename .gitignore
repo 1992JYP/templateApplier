@@ -2,3 +2,5 @@
 *__pycache__
 *edgeControl
 *.sql
+!PDtemplate.sql
+!TBtemplate.sql
