@@ -21,12 +21,7 @@ def main():
 
     다만 라이브러리인 Click에서 커맨드라인 명령어 연속 실행을 별로 안좋아 하는 것 같아서 이부분은 어떻게 처리해야 할지 고민입니다.                  
 
-    현재 완성된 기능은 프로시저 생성 파일이 전부이며 다른 기능을 원하시면 직접 만드시던가, 아니면 제가 다른 기능을 추가할 때까지 기다리시던가,
-    
-    급하시다면
-    박주윤
-    신한 110 339 707136 으로 코드 한줄당 1$ 받겠습니다. 전 양심있어서 라인 개수로 세지는 않습니다.
-     
+    현재 완성된 기능은 프로시저 생성 파일이 전부이며 다른 기능을 원하시면 직접 만드시던가, 아니면 제가 다른 기능을 추가할 때까지 기다리시던가, 해주세요 :)
     """
     pass
 
@@ -41,11 +36,16 @@ def main():
 #     pass
 
 @main.command("sql")
+# @click.option('--menu',
+#                 type=click.Choice(['SP','TB'], case_sensitive=False),
+#                 prompt="""  
+#                                     default
+#     plz choose your option""", default = 'SP')
 def sql():
     """ 저장 프로시저 생성 템플릿 채우기 """
     sqlcreator = sqlCreator()
     click.echo(sqlcreator.change())
-    click.echo(sys.platform)
+    # click.echo(sys.platform)
 
 
 
